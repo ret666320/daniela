@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para mi persona favorita ❤️</title>
+
+<style>
+:root {
+    --color-primario: #db4dff;
+    --color-fondo: #fff5f7;
+    --color-texto: #590d22;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Georgia', serif;
+    background: linear-gradient(#f3e5d8, #e8d5c4);
+    color: var(--color-texto);
+}
+
+.carta {
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            #fffdf7,
+            #fffdf7 28px,
+            #f2efe6 29px
+        );
+}
+
+section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+h1, h2 { color: var(--color-primario); }
+
+.hero h1 { 
+    font-size: 3rem; 
+    animation: heartbeat 1.5s infinite; 
+}
+
+.carta {
+    background: #fffdf7;
+    max-width: 650px;
+    padding: 60px 50px;
+    border-radius: 8px;
+    box-shadow: 
+        0 15px 35px rgba(0,0,0,0.15),
+        inset 0 0 30px rgba(0,0,0,0.03);
+    line-height: 2;
+    font-size: 1.15rem;
+    position: relative;
+    transform: rotate(-1deg);
+}
+
+/* Bordes ligeramente envejecidos */
+.carta::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 8px;
+    box-shadow: inset 0 0 80px rgba(0,0,0,0.05);
+    pointer-events: none;
+}
+
+/* Título estilo tinta */
+.carta h2 {
+    font-family: 'Georgia', serif;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    width: 90%;
+    max-width: 1000px;
+}
+
+.foto-card {
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transform: rotate(var(--r));
+    transition: 0.3s;
+}
+
+.foto-card:hover { 
+    transform: rotate(0deg) scale(1.05); 
+    z-index: 5; 
+}
+
+.foto-card img,
+.foto-card video {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Overlay corazón */
+#overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 245, 247, 0.95);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    cursor: pointer;
+    transition: opacity 0.8s ease;
+}
+
+.heart {
+    font-size: 5rem;
+    animation: heartBeat 1.2s infinite;
+}
+
+#overlay p {
+    margin-top: 15px;
+    font-size: 1.2rem;
+}
+
+@keyframes heartBeat {
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+}
+
+@keyframes heartbeat {
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* Sección final */
+.pregunta-final { background-color: #ffe3e8; }
+
+.btn-container { 
+    margin-top: 30px; 
+    position: relative; 
+    height: 100px; 
+}
+
+button {
+    padding: 15px 40px;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+#si { 
+    background: var(--color-primario); 
+    color: white; 
+}
+
+#no { 
+    background: #adb5bd; 
+    color: white; 
+    position: absolute; 
+}
+
+@keyframes fall {
+    to { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<audio id="musica" loop>
+    <source src="./musica/Vacations - Telephones.mp3" type="audio/mpeg">
+</audio>
+
+<div id="overlay">
+    <div class="heart">❤️</div>
+    <p>Toca el corazón</p>
+</div>
+
+<section class="hero">
+    <h1>Hola, mi amor... ❤️</h1>
+    <p>Tengo algo que decirte, sigue bajando.</p>
+    <span style="font-size:2rem;">↓</span>
+</section>
+
+<section>
+    <div class="carta">
+        <h2>Para la niña más linda (Mi Dani)</h2>
+        <p>
+            Desde que llegaste a mi vida, todo tiene un color diferente...
+        </p>
+    </div>
+</section>
+
+<section>
+<h2>Algunos de nuestros recurdos</h2>
+<div class="galeria">
+
+<div class="foto-card" style="--r:-3deg">
+    <img src="galeria/Photos(0)/IMG_3585.jpg">
+    <p>Eres</p>
+</div>
+
+<div class="foto-card" style="--r:-2deg">
+<video muted loop playsinline preload="metadata">
+        <source src="galeria/8a015a6671a448e3ac928e3ac5351de9.mov" type="video/mp4">
+    </video>
+    <p>Lo</p>
+</div>
+
+<div class="foto-card" style="--r:2deg">
+    <img src="galeria/Photos (3)/IMG_5505.jpg">
+    <p>Mejor</p>
+</div>
+
+<div class="foto-card" style="--r:-2deg">
+<video muted loop playsinline preload="metadata">
+        <source src="galeria/3.mp4" type="video/mp4">
+    </video>
+    <p>que</p>
+</div>
+
+
+
+<div class="foto-card" style="--r:3deg">
+    <img src="galeria/Photos (2)/IMG_4916.jpg">
+    <p>tengo</p>
+</div>
+
+
+<div class="foto-card" style="--r:-2deg">
+<video muted loop playsinline preload="metadata">
+        <source src="galeria/4.mp4" type="video/mp4">
+    </video>
+    <p>te</p>
+</div>
+
+<div class="foto-card" style="--r:1deg">
+    <img src="galeria/dos.jpg">
+    <p>amo</p>
+</div>
+
+<div class="foto-card" style="--r:-2deg">
+<video muted loop playsinline preload="metadata">
+        <source src="galeria/5.mp4" type="video/mp4">
+    </video>
+    <p>mucho</p>
+</div>
+
+
+<div class="foto-card" style="--r:-1deg">
+    <img src="galeria/tres.jpg">
+    <p>mi dani</p>
+</div>
+
+
+<div class="foto-card" style="--r:-2deg">
+<video muted loop playsinline preload="metadata">
+        <source src="galeria/Photos (1)/IMG_3586.mov" type="video/mp4">
+    </video>
+    <p>espero </p>
+</div>
+
+<div class="foto-card" style="--r:-1deg">
+    <img src="galeria/5.jpg">
+    <p>que</p>
+</div>
+
+
+<div class="foto-card" style="--r:-2deg">
+<video muted loop playsinline preload="metadata">
+        <source src="galeria/7.mp4" type="video/mp4">
+    </video>
+    <p>te guste</p>
+</div>
+
+</div>
+</section>
+
+<section class="pregunta-final">
+<h2>Entonces...</h2>
+<h1>¿Quieres ser mi San Valentín?</h1>
+
+<div class="btn-container">
+    <button id="si">Si porque te amo</button>
+    <button id="no">No porque te odio</button>
+</div>
+</section>
+
+<script>
+// Música al tocar corazón
+const overlay = document.getElementById('overlay');
+const musica = document.getElementById('musica');
+
+overlay.addEventListener('click', () => {
+    musica.volume = 0;
+    musica.play();
+
+   let vol = 0;
+const fade = setInterval(() => {
+    if (vol < 1) {
+        vol += 0.05;
+        musica.volume = Math.min(vol, 1);
+    } else {
+        musica.volume = 1;
+        clearInterval(fade);
+    }
+}, 100);
+
+    overlay.style.opacity = '0';
+    setTimeout(() => overlay.remove(), 800);
+});
+
+// Forzar autoplay de videos por seguridad
+window.addEventListener("load", () => {
+    document.querySelectorAll("video").forEach(v => {
+        v.play().catch(()=>{});
+    });
+});
+
+// Botón que huye
+const btnNo = document.getElementById('no');
+btnNo.addEventListener('mouseover', () => {
+    btnNo.style.left = Math.random()*80 + "vw";
+    btnNo.style.top = Math.random()*80 + "vh";
+});
+
+// Confeti
+document.getElementById('si').addEventListener('click', () => {
+    for(let i=0;i<50;i++){
+        const drop = document.createElement('div');
+        drop.innerHTML='❤️';
+        drop.style.position='fixed';
+        drop.style.left=Math.random()*100+'vw';
+        drop.style.top='-20px';
+        drop.style.fontSize=Math.random()*20+10+'px';
+        drop.style.animation='fall 3s linear forwards';
+        document.body.appendChild(drop);
+    }
+});
+</script>
+
+</body>
+</html>
